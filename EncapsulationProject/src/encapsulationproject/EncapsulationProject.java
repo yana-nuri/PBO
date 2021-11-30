@@ -14,23 +14,17 @@ public class EncapsulationProject extends Others{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        // Objek
+    public static void main(String[] args) { 
         MemberSilver SMember = new MemberSilver();
         MemberGold GMember = new MemberGold();
         MemberPlatinum PMember = new MemberPlatinum();
-        
-        // Masukkan data member
+
         inputMember();
-        
-        
-        // Atribut
+
         String idMember;
         int tglRent, blnRent, thnRent, tglKembali, blnKembali, thnKembali;
         Scanner input = new Scanner(System.in);
-    
-        // Input
+
         System.out.println(" ###################### Program Pengembalian Rental Game Console ######################");
         
         System.out.print("Masukkan ID Member                  : ");
@@ -54,25 +48,17 @@ public class EncapsulationProject extends Others{
         
         System.out.print("Masukkan Tahun Kembali (xxxx)       : ");
         thnKembali = input.nextInt();
-        
-        
-        // Mencari Data Member
+
         System.out.println("\n #########################################################################################");
         cariMember(idMember);
-        
-        
-        // menampilkan tanggal rental rental dan tanggal kembali
+
         System.out.println("\n #########################################################################################");
         System.out.println("Tanggal Pinjam                    : " + tglRent + " - " + blnRent + " - " + thnRent);
         System.out.println("Tanggal Kembali                   : " + tglKembali + " - " + blnKembali + " - " + thnKembali);
-        
-        
-        // Menampilkan Durasi Rental
+
         int durasiRental = durasiRental(tglRent, blnRent, thnRent, tglKembali, blnKembali, thnKembali);
         System.out.println("Lama Sewa                         : " + durasiRental + " hari");
-        
-        
-        // show rent cost
+
         String jenisMember = dapatJenisMember(idMember);
         if(jenisMember == "Silver") {
             System.out.println("Total Sewa                    : Rp. " + SMember.jumlahBiaya(durasiRental));
