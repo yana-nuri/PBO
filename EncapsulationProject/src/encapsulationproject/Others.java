@@ -18,8 +18,8 @@ import java.util.Map;
  * @author Acer
  */
 public class Others {
-    static Map<String, List<String>> dataMember = new HashMap<String, List<String>>();
-    static int waktuRental;
+    static Map<String, List<String>> yanaMember = new HashMap<String, List<String>>();
+    static int jamRental;
     
     // Memasukkan data member 
     static void inputMember() {
@@ -40,18 +40,18 @@ public class Others {
         valueThree.add("Platinum");
         
         // insert all values paired to key
-        dataMember.put("M001", valueOne);
-        dataMember.put("M002", valueTwo);
-        dataMember.put("M003", valueThree);
+        yanaMember.put("M001", valueOne);
+        yanaMember.put("M002", valueTwo);
+        yanaMember.put("M003", valueThree);
     }
     
     
     // Mencari data di arrayList
     static void cariMember(String idMember) {       
          
-        if(dataMember.containsKey(idMember)) {
+        if(yanaMember.containsKey(idMember)) {
             
-            for(Map.Entry<String, List<String>> entry : dataMember.entrySet()) {
+            for(Map.Entry<String, List<String>> entry : yanaMember.entrySet()) {
                 if(entry.getKey().equals(idMember)) {
                     
                 String key = entry.getKey();
@@ -71,8 +71,8 @@ public class Others {
     static String dapatJenisMember(String idMember) {
         
         String jenisMember = null;
-        if(dataMember.containsKey(idMember)) {
-            for(Map.Entry<String, List<String>> entry : dataMember.entrySet()) {
+        if(yanaMember.containsKey(idMember)) {
+            for(Map.Entry<String, List<String>> entry : yanaMember.entrySet()) {
                 if(entry.getKey().equals(idMember)) {
                     
                 List<String> values = entry.getValue();               
@@ -92,7 +92,7 @@ public class Others {
 
                     Duration duration = Duration.between(rent, returned);
         
-                    waktuRental = (int) duration.toDays();
+                    jamRental = (int) duration.toDays();
                  
             } else {
                 System.out.println("Tanggal kembali tidak valid, silakan ulangi program");
@@ -101,7 +101,7 @@ public class Others {
             System.out.println("Tanggal kembali tidak valid, silakan ulangi program");
         }
         
-        return waktuRental;
+        return jamRental;
     }
 }
 

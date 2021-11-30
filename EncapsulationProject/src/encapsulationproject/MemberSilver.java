@@ -11,10 +11,10 @@ package encapsulationproject;
  */
 public class MemberSilver extends Others{
     // Atribut
-    private int biayaRental, poin, diskon, biayaTemp, jumlahDiskon, biayaTotal;
+    private int hargaRental, poin, diskon, hargaTemp, jumlahDiskon, totalHarga;
     
     public void setBiayaRental(int br){
-        this.biayaRental = br;
+        this.hargaRental = br;
     }
     
     public void setPoin(int pn){
@@ -24,8 +24,7 @@ public class MemberSilver extends Others{
     public void setDiskon(int ds){
         this.diskon = ds;
     }
-    
-    // Konstruktor
+
     MemberSilver() {
         setBiayaRental(25000);
         setPoin(1);
@@ -34,11 +33,11 @@ public class MemberSilver extends Others{
     
     protected int jumlahBiaya(int durasiRental) {
         
-        biayaTemp = durasiRental * biayaRental;
-        jumlahDiskon = (biayaTemp * diskon) / 100;
-        biayaTotal = biayaTemp - jumlahDiskon;
+        hargaTemp = durasiRental * hargaRental;
+        jumlahDiskon = (hargaTemp * diskon) / 100;
+        totalHarga = hargaTemp - jumlahDiskon;
         
-        return biayaTotal;
+        return totalHarga;
     }
     
     protected int dapatPoin(int durasiRental) {

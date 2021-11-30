@@ -10,10 +10,10 @@ package encapsulationproject;
  * @author Acer
  */
 public class MemberGold extends MemberSilver{
-    private int uangKembali;
+    private int kembalian;
     
     public void setuangKembali(int UK){
-        this.uangKembali = UK;
+        this.kembalian = UK;
     }
     
     MemberGold() {
@@ -24,6 +24,6 @@ public class MemberGold extends MemberSilver{
     }
     
     public int getuangKembali(){
-        return this.uangKembali;
+        return this.kembalian;
     }
 }
