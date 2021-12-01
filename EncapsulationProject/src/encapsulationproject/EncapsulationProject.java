@@ -15,14 +15,14 @@ public class EncapsulationProject extends Others{
      * @param args the command line arguments
      */
     public static void main(String[] args) { 
-        MemberSilver SMember = new MemberSilver();
-        MemberGold GMember = new MemberGold();
-        MemberPlatinum PMember = new MemberPlatinum();
+        MemberSilver silver = new MemberSilver();
+        MemberGold gold = new MemberGold();
+        MemberPlatinum platinum = new MemberPlatinum();
 
         inputMember();
 
         String idMember;
-        int tglRent, blnRent, thnRent, tglKembali, blnKembali, thnKembali;
+        int tanggalPenyewaan, bulanPenyewaan, tahunPenyewaan, tanggalPengembalian, bulanPengembalian, tahunPengembalian;
         Scanner input = new Scanner(System.in);
 
         System.out.println(" ###################### Program Pengembalian Rental Game Console ######################");
@@ -31,49 +31,49 @@ public class EncapsulationProject extends Others{
         idMember = input.nextLine();
         
         System.out.print("Masukkan Tanggal Pinjam (1 - 31)    : ");
-        tglRent = input.nextInt();
+        tanggalPenyewaan = input.nextInt();
         
         System.out.print("Masukkan Bulan Pinjam (1 - 12)      : ");
-        blnRent = input.nextInt();
+        bulanPenyewaan = input.nextInt();
         
         System.out.print("Masukkan Tahun Pinjam (xxxx)        : ");
-        thnRent = input.nextInt();
+        tahunPenyewaan = input.nextInt();
         
         System.out.println("\n");
         System.out.print("Masukkan Tanggal Kembali (1 - 31)   : ");
-        tglKembali = input.nextInt();
+        tanggalPengembalian = input.nextInt();
         
         System.out.print("Masukkan Bulan Kembali (1 - 12)     : ");
-        blnKembali = input.nextInt();
+        bulanPengembalian = input.nextInt();
         
         System.out.print("Masukkan Tahun Kembali (xxxx)       : ");
-        thnKembali = input.nextInt();
+        tahunPengembalian = input.nextInt();
 
         System.out.println("\n #########################################################################################");
         cariMember(idMember);
 
         System.out.println("\n #########################################################################################");
-        System.out.println("Tanggal Pinjam                    : " + tglRent + " - " + blnRent + " - " + thnRent);
-        System.out.println("Tanggal Kembali                   : " + tglKembali + " - " + blnKembali + " - " + thnKembali);
+        System.out.println("Tanggal Peminjaman                    : " + tanggalPenyewaan + " - " + bulanPenyewaan + " - " + tahunPenyewaan);
+        System.out.println("Tanggal Pengembalian                   : " + tanggalPengembalian + " - " + bulanPengembalian + " - " + tahunPengembalian);
 
-        int durasiRental = durasiRental(tglRent, blnRent, thnRent, tglKembali, blnKembali, thnKembali);
-        System.out.println("Lama Sewa                         : " + durasiRental + " hari");
+        int durasiRental = durasiRental(tanggalPenyewaan, bulanPenyewaan, tahunPenyewaan, tanggalPengembalian, bulanPengembalian, tahunPengembalian);
+        System.out.println("Lama Penyewaanm00                         : " + durasiRental + " hari");
 
         String jenisMember = dapatJenisMember(idMember);
         if(jenisMember == "Silver") {
-            System.out.println("Total Sewa                    : Rp. " + SMember.jumlahBiaya(durasiRental));
-            System.out.println("Jumlah Poin                   : " + SMember.dapatPoin(durasiRental));
+            System.out.println("Total Sewa                    : Rp. " + silver.jumlahBiaya(durasiRental));
+            System.out.println("Jumlah Poin                   : " + silver.dapatPoin(durasiRental));
         
         } else if(jenisMember == "Gold") {
-            System.out.println("Total Sewa                    : Rp. " + GMember.jumlahBiaya(durasiRental));
-            System.out.println("Jumlah Poin                   : " + GMember.dapatPoin(durasiRental));
-            System.out.println("Jumlah Cashback               : Rp. " + GMember.getuangKembali());
+            System.out.println("Total Sewa                    : Rp. " + gold.jumlahBiaya(durasiRental));
+            System.out.println("Jumlah Poin                   : " + gold.dapatPoin(durasiRental));
+            System.out.println("Jumlah Cashback               : Rp. " + gold.getuangKembali());
             
         } else if(jenisMember == "Platinum") {
-            System.out.println("Total Sewa                    : Rp. " + PMember.jumlahBiaya(durasiRental));
-            System.out.println("Jumlah Poin                   : " + PMember.dapatPoin(durasiRental));
-            System.out.println("Jumlah Cashback               : Rp. " + PMember.getuangKembali());
-            System.out.println("Bonus Pulsa                   : Rp. " + PMember.dapatBonus(durasiRental));
+            System.out.println("Total Sewa                    : Rp. " + platinum.jumlahBiaya(durasiRental));
+            System.out.println("Jumlah Poin                   : " + platinum.dapatPoin(durasiRental));
+            System.out.println("Jumlah Cashback               : Rp. " + platinum.getuangKembali());
+            System.out.println("Bonus Pulsa                   : Rp. " + platinum.dapatBonus(durasiRental));
             
         } else {
             System.out.println("");
